@@ -15,8 +15,29 @@ namespace ServerState.Controllers
             var allWebServices = new List<WebService>();
 
             // do for/each here where we bring in each webservice to test
-            var tempWebService = new WebService { Name = "Google", Address = "google.ca", Port = 80 };
+            var tempWebService = new WebService { Name = "SABnzb", Address = "mcp", Port = 8080 };
             var result = TestWebService(tempWebService);
+            tempWebService.LastTestResult = result.Result;
+            tempWebService.LastTestResultText = result.ResultText;
+
+            allWebServices.Add(tempWebService);
+
+            tempWebService = new WebService { Name = "Sonarr", Address = "mcp", Port = 8989 };
+            result = TestWebService(tempWebService);
+            tempWebService.LastTestResult = result.Result;
+            tempWebService.LastTestResultText = result.ResultText;
+
+            allWebServices.Add(tempWebService);
+
+            tempWebService = new WebService { Name = "Radarr", Address = "mcp", Port = 7878 };
+            result = TestWebService(tempWebService);
+            tempWebService.LastTestResult = result.Result;
+            tempWebService.LastTestResultText = result.ResultText;
+
+            allWebServices.Add(tempWebService);
+
+            tempWebService = new WebService { Name = "Plex", Address = "mcp", Port = 8090 };
+            result = TestWebService(tempWebService);
             tempWebService.LastTestResult = result.Result;
             tempWebService.LastTestResultText = result.ResultText;
 

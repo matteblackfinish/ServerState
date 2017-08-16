@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Custom Items*/
+
+.statusIcons
+{
+    height: 20px;
+    width: 20px;
+}
